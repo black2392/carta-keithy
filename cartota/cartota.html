@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carta para Keithy</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #ffc0cb;
+            font-family: Arial, sans-serif;
+            flex-direction: column;
+        }
+        .container {
+            position: relative;
+            text-align: center;
+        }
+        .sobre {
+            width: 700px;
+            height: 350px;
+            background-color: #ff1493;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            color: white;
+            font-size: 36px;
+            font-weight: bold;
+            border-radius: 10px;
+            transition: transform 0.3s;
+        }
+        .sobre:hover {
+            transform: scale(1.05);
+        }
+        .carta {
+            width: 95%;
+            max-width: 900px;
+            height: 90vh;
+            padding: 50px;
+            background: white;
+            border-radius: 10px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            transition: transform 0.5s ease-in-out;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+            font-size: 22px;
+            line-height: 1.8;
+            text-align: justify;
+            overflow-y: auto;
+        }
+        .mostrar {
+            transform: translate(-50%, -50%) scale(1);
+        }
+    </style>
+</head>
+<body>
+    <audio id="musica" loop>
+        <source src="cancion.mp3" type="audio/mpeg">
+        Tu navegador no soporta audio HTML5.
+    </audio>
+
+    <div class="container">
+        <div class="sobre" onclick="abrirCarta()">Ábreme...</div>
+        <div class="carta" id="carta">
+            <p><strong>Mi querida Keithy,</strong></p>
+            <p>Desde que entraste en mi vida, todo ha cambiado para bien. Nunca imaginé que alguien pudiera enseñarme tanto, no solo sobre el amor, sino también sobre la vida misma. Has sido mi refugio, mi alegría, mi paz en medio del caos. Contigo he descubierto que el amor no solo es sentir, sino también aprender, crecer y compartir.</p>
+            <p>Me has mostrado la belleza de la paciencia, la magia de la comprensión y la importancia de la fe. Gracias a ti, he sentido a Dios más cerca de mí que nunca. Me has enseñado que el amor verdadero también es espiritual, que se construye con cada palabra de aliento, con cada risa compartida, con cada oración susurrada en la distancia. Eres una luz en mi vida, y cada día agradezco por haberte encontrado.</p>
+            <p>No importa la distancia, ni el tiempo que tengamos que esperar. Porque lo que siento por ti trasciende cualquier barrera, cualquier kilómetro. Te quiero en mi presente y en mi futuro, en mis sueños y en mis planes. Eres la persona con la que quiero compartir cada pequeño detalle, cada alegría, cada desafío. Siempre te quiero en mi vida, Keithy, porque sin ti, todo sería menos hermoso.</p>
+            <p>Eres mi inspiración, mi refugio y mi fuerza. No hay día en el que no piense en ti y en lo afortunado que soy de tenerte. Me haces querer ser mejor, me impulsas a luchar por nuestros sueños y a creer que, a pesar de la distancia, nuestro amor es inquebrantable. Quiero seguir construyendo momentos inolvidables contigo, seguir aprendiendo de ti y descubriendo juntos el hermoso camino que nos espera.</p>
+            <p>Cuando pienso en nuestro futuro, lo imagino lleno de risas, abrazos interminables y aventuras que solo nosotros entenderemos. Y aunque ahora solo podamos imaginarlo, espero algún día poder hacerte pancakes con carita feliz, verte sonreír al probarlos y sentir que, al fin, la espera ha valido la pena.</p>
+            <p>💙</p>
+            <p><strong>Con todo mi amor, Angel: https://drive.google.com/drive/folders/17TgeUX7HaljwR4n4iZmgllBO1e6FP5G7?usp=drive_link</strong></p>
+        </div>
+    </div>
+
+    <script>
+        function abrirCarta() {
+            document.getElementById("carta").classList.toggle("mostrar");
+            let audio = document.getElementById("musica");
+            if (audio.paused) {
+                audio.play().catch(error => console.log("El navegador bloqueó la reproducción automática."));
+            }
+        }
+    </script>
+</body>
+</html>
